@@ -6,25 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 随记 | zpw的个人博客</title>
+  <title>Docker安装启动的一些命令 | zpw的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zpw的个人博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E9%9A%8F%E8%AE%B0&#x2F;index.html">
+  <meta name="description" content="docker的核心概念、linux安装Docker的步骤、使用docker、容器操作">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker安装启动的一些命令">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;17&#x2F;docker&#x2F;index.html">
 <meta property="og:site_name" content="zpw的个人博客">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="docker的核心概念、linux安装Docker的步骤、使用docker、容器操作">
+<meta property="article:published_time" content="2019-12-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2019-12-17T14:41:23.508Z">
 <meta property="article:author" content="张小威">
-<meta property="article:tag" content="前端博客，后端博客，java">
-<meta property="article:tag" content="vue.js">
-<meta property="article:tag" content="jquery">
-<meta property="article:tag" content="html5">
-<meta property="article:tag" content="springboot">
-<meta property="article:tag" content="springcloud">
-<meta property="article:tag" content="mysql">
-<meta property="article:tag" content="日记">
-<meta property="article:tag" content="随心记">
-<meta property="article:tag" content="感想">
+<meta property="article:tag" content="随机">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="zpw的个人博客" type="application/atom+xml">
@@ -165,36 +158,84 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-docker" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Docker安装启动的一些命令
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/17/docker/" class="archive-article-date">
+
+        
+        <a href="/2019/12/17/docker/" class="archive-article-date">
   	<time datetime="2019-12-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/17/docker/">Docker安装启动的一些命令</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>docker的核心概念、linux安装Docker的步骤、使用docker、容器操作</strong></p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
+<p><strong>核心概念</strong></p>
+<p>docker主机(Host): 安装了Docker程序的机器，直接安装在操作系统上；</p>
+<p>docker客户端(Client):连接docker主机进行操作；</p>
+<p>docker仓库(Registry):用来保存各种打包好的软件镜像；</p>
+<p>docker镜像(Images):软件打包好的镜像；放在docket仓库中；</p>
+<p>docker容器（Container）：镜像启动后的实例称为一个容器；容器是独立运行的一个或一组应用；</p>
+<p><strong>linux安装Docker的步骤：</strong></p>
+<p>1.uname -r 检查内核是否在3.10及以上</p>
+<p>2.不是的话升级内核 yum update</p>
+<p>3.安装docker ： yum install docker</p>
+<p>4.启动docker： systemctl start docker</p>
+<p>5.开机启动docker：systemctl  enable docker </p>
+<p>6.停止docker：systemctl stop docker</p>
+<p><strong>使用docker</strong></p>
+<p>docker search mysql</p>
+<p>docker pull mysql</p>
+<p>查看所有镜像：docker images</p>
+<p>删除镜像：docker rmi [镜像id]</p>
+<p><strong>容器操作</strong></p>
+<p>1.根据镜像启动容器：docker run –name mytomcat -d [镜像名]</p>
+<p>2.查看那些容器运行：docker ps</p>
+<p>3.停止运行的容器：docker stop [容器id]</p>
+<p>4.查看所有的容器：docker ps -a</p>
+<p>5.启动容器：docker start [容器id]</p>
+<p>6.删除容器 : docker rm [容器id]</p>
+<p>7.启动一个做了端口映射的容器：docker run –name mytomcat -d -p8888:8080 [镜像名]</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -206,7 +247,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -219,66 +260,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/17/docker/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/14/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2019-12-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/16/java8%E6%96%B0%E7%89%B9%E6%80%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java8新特性学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/14/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85/">今天遇到的一些问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随记//" class="article-tag-list-link color3">随记</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -301,9 +380,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
